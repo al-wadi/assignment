@@ -8,10 +8,15 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Created by Wadi
+ * Date 7/21/2024
+ **/
+
 @Component
 public class TaskProcessor {
-    private final ExecutorService executorService = Executors.newFixedThreadPool(5); // Reduced thread pool size
-    private List<Task> completedTasks = new ArrayList<>(); // Store completed tasks
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private final List<Task> completedTasks = new ArrayList<>();
 
     public void processTasks(List<Task> tasks) {
         for (Task task : tasks) {
@@ -25,7 +30,6 @@ public class TaskProcessor {
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     System.out.println("Task processing interrupted: " + task.getTitle());
-                    // Handle error
                 }
             });
         }
@@ -33,7 +37,4 @@ public class TaskProcessor {
         executorService.shutdown();
     }
 
-    public List<Task> getCompletedTasks() {
-        return completedTasks;
-    }
 }

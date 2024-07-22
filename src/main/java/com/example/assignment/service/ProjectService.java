@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
  * Created by Wadi
  * Date 7/21/2024
  **/
+
 @Service
 public class ProjectService {
     private List<Task> tasks = new ArrayList<>();

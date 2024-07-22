@@ -36,7 +36,7 @@ public class ProjectController {
         // Filter tasks by priority using the PriorityLevel enum
         Set<Task> highPriorityTasks = tasks.stream()
                 .filter(task -> task.getPriority().equals(Priority.HIGH))
-                .collect(Collectors.toSet()); // Use toSet() to collect into a Set
+                .collect(Collectors.toSet());
 
         return highPriorityTasks;
     }
@@ -46,7 +46,7 @@ public class ProjectController {
         taskProcessor.processTasks(projectService.getTasks());
     }
 
-    // User-related endpoints
+    // User related endpoints
 
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {

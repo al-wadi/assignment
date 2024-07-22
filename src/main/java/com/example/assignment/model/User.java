@@ -1,9 +1,14 @@
 package com.example.assignment.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Created by Wadi
  * Date 7/21/2024
  **/
+@Setter
+@Getter
 public class User {
     private int id;
     private String name;
@@ -15,27 +20,4 @@ public class User {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

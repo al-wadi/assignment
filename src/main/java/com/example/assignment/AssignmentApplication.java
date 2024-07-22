@@ -17,23 +17,28 @@ import java.util.Date;
 public class AssignmentApplication implements CommandLineRunner {
 
     @Autowired
-    private ProjectService projectService;
+    private final ProjectService projectService;
 
     @Autowired
-    private TaskProcessor taskProcessor;
+    private final TaskProcessor taskProcessor;
+
+    public AssignmentApplication(ProjectService projectService, TaskProcessor taskProcessor) {
+        this.projectService = projectService;
+        this.taskProcessor = taskProcessor;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(AssignmentApplication.class, args);
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args){
         // Create and add tasks
-        addTask("Task 1", "description", "pending",Priority.LOW, new Date());
-        addTask("Task 2", "description", "pending", Priority.LOW, new Date());
-        addTask("Task 3", "description", "pending", Priority.MEDIUM, new Date());
-        addTask("Task 4", "description", "pending", Priority.HIGH, new Date());
-        addTask("Task 5", "description", "pending", Priority.HIGH, new Date());
+        addTask("Task 1", "description 1", "pending",Priority.LOW, new Date());
+        addTask("Task 2", "description 2", "pending", Priority.LOW, new Date());
+        addTask("Task 3", "description 3", "pending", Priority.MEDIUM, new Date());
+        addTask("Task 4", "description 4", "pending", Priority.HIGH, new Date());
+        addTask("Task 5", "description 5", "pending", Priority.HIGH, new Date());
 
         // Print task count
         System.out.println("tasks :-" + projectService.countTask());
@@ -42,7 +47,6 @@ public class AssignmentApplication implements CommandLineRunner {
         taskProcessor.processTasks(projectService.getTasks());
     }
 
-    // Helper method to add tasks using a lambda
     private void addTask(String title, String description, String status, Priority priority, Date dueDate) {
         projectService.addTask(new Task(0, title, description, status, priority, dueDate));
     }
