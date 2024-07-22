@@ -1,8 +1,8 @@
 package com.example.assignment.model;
 
 /**
- * Created by Wadi
- * Date 7/22/2024
+ * @author Wadi
+ * @since 7/21/2024
  **/
 
 public enum Priority {

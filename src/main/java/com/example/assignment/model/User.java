@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Wadi
- * Date 7/21/2024
+ * @author Wadi
+ * @since 7/21/2024
  **/
+
 @Setter
 @Getter
 public class User {

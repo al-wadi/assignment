@@ -5,8 +5,8 @@ import com.example.assignment.model.User;
 import java.util.List;
 
 /**
- * Created by Wadi
- * Date 7/21/2024
+ * @author Wadi
+ * @since 7/21/2024
  **/
 
 public interface UserService {

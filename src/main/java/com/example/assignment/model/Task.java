@@ -6,9 +6,10 @@ import lombok.Setter;
 import java.util.Date;
 
 /**
- * Created by Wadi
- * Date 7/21/2024
+ * @author Wadi
+ * @since 7/21/2024
  **/
+
 @Getter
 @Setter
 public class Task {
